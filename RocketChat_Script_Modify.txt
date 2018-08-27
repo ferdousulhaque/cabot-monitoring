@@ -1,0 +1,11 @@
+	  15 cd /usr/lib/python2.7/site-packages/cabot_alert_rocketchat
+	  16 ls
+	  17 vi models.py
+
+
+	payload = {}
+        payload['attachments'] = attachments
+	payload['text'] = '*Service "%s" %s *' % ((context.get('service').name), (context.get('service').overall_status))
+	payload['parse'] = 'none'
+        payload['username'] = context.get('username')
+        payload['channel'] = context.get('channel')
